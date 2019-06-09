@@ -8,9 +8,9 @@ const config = require('./config.json');
 //------------------------------------------------------------------------------
 
 //import the various commands - these will be accessible with !{propertyname} fron the chat
-const commands = {};
-commands.hello = require('./commands/hello.js');
-commands.help  = require('./commands/help.js');
+global.commands = {};
+global.commands.help  = require('./commands/help.js');
+global.commands.hello = require('./commands/hello.js');
 
 //------------------------------------------------------------------------------
 
@@ -33,8 +33,8 @@ client.on('message', message => {
         arguments = arguments.join(' ').split(',').map(value => value.trim());
 
         //if the command exits - then execute it
-        if (commands.hasOwnProperty(command)) {
-            commands[command](client, command, ((arguments == '') ? null : arguments), message);
+        if (global.commands.hasOwnProperty(command)) {
+            global.commands[command](client, command, ((arguments == '') ? null : arguments), message);
         } else {
             console.log(`Unknown Command "${command}".`);
         }
