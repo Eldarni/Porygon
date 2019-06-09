@@ -1,0 +1,14 @@
+{
+	"name": "porygon",
+	"version": "1.0.0",
+	"description": "Pokemon Go Community Bot",
+	"main": "bot.js",
+	"author": "Eldarni",
+	"dependencies": {
+		"discord.js": "^11.5.1"
+	},
+	"scripts": {
+		"clean": "rm -rf node_modules",
+		"reinstall": "npm run clean && npm install"
+	}
+}
