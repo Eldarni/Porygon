@@ -6,6 +6,8 @@
 	"author": "Eldarni",
 	"dependencies": {
 		"discord.js": "^11.5.1",
+		"moment": "^2.24.0",
+		"request": "^2.88.0",
 		"sqlite3": "^4.0.8"
 	},
 	"scripts": {
