@@ -1,6 +1,6 @@
 
 //get the discord client
-const Discord = require('discord.js');
+const discord = require('discord.js');
 
 //get the config
 const config = require('./config.json');
@@ -21,7 +21,7 @@ global.commands.hello = require('./commands/hello.js');
 //------------------------------------------------------------------------------
 
 //
-const client = new Discord.Client();
+const client = new discord.Client();
 
 //
 client.on('ready', () => {
