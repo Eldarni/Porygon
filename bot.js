@@ -7,6 +7,12 @@ const config = require('./config.json');
 
 //------------------------------------------------------------------------------
 
+//make a connection the the database
+const sqlite3 = require('sqlite3');
+global.database = new sqlite3.Database('porygon.db');
+
+//------------------------------------------------------------------------------
+
 //import the various commands - these will be accessible with !{propertyname} fron the chat
 global.commands = {};
 global.commands.help  = require('./commands/help.js');

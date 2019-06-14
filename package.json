@@ -5,7 +5,8 @@
 	"main": "bot.js",
 	"author": "Eldarni",
 	"dependencies": {
-		"discord.js": "^11.5.1"
+		"discord.js": "^11.5.1",
+		"sqlite3": "^4.0.8"
 	},
 	"scripts": {
 		"clean": "rm -rf node_modules",
