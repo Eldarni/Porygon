@@ -1,6 +1,9 @@
 
 //------------------------------------------------------------------------------
 
+//get the config
+global.config = require('./config.json');
+
 //
 const moment  = require('moment');
 const request = require("request");
@@ -23,10 +26,10 @@ const weatherForecastStatement = database.prepare('INSERT INTO weatherForecast (
 //------------------------------------------------------------------------------
 
 //
-database.each('SELECT wl_location, wl_token FROM weatherLocation', function(error, result) {
+database.each('SELECT wl_location FROM weatherLocation', function(error, result) {
 
 	//
-	request.get('http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/' + result['wl_location'] + '?apikey=' + result['wl_token'] + '&details=true&metric=true', (error, response, body) => {
+	request.get('http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/' + result['wl_location'] + '?apikey=' + global.config['weather-api-token'] + '&details=true&metric=true', (error, response, body) => {
 
 	    //store the response incase we want to reparse it
 	    weatherRequestStatement.run(requestDate, result['wl_location'], body);

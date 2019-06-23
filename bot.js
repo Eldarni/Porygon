@@ -3,7 +3,7 @@
 const discord = require('discord.js');
 
 //get the config
-const config = require('./config.json');
+global.config = require('./config.json');
 
 //------------------------------------------------------------------------------
 
@@ -51,4 +51,4 @@ client.on('message', message => {
 });
 
 //
-client.login(config.token);
+client.login(global.config['discord-bot-token']);
