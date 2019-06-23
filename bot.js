@@ -15,9 +15,11 @@ global.database = new sqlite3.Database('porygon.db');
 
 //import the various commands - these will be accessible with !{propertyname} fron the chat
 global.commands = {};
-global.commands.help    = require('./commands/help.js');
-global.commands.hello   = require('./commands/hello.js');
-global.commands.weather = require('./commands/weather.js');
+global.commands.help           = require('./commands/help.js');
+global.commands.hello          = require('./commands/hello.js');
+global.commands.weather        = require('./commands/weather.js');
+global.commands.addLocation    = require('./commands/addLocation.js');
+global.commands.removeLocation = require('./commands/removeLocation.js');
 
 //------------------------------------------------------------------------------
 
