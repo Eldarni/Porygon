@@ -17,6 +17,7 @@ global.database = new sqlite3.Database('porygon.db');
 global.commands = {};
 global.commands.help           = require('./commands/help.js');
 global.commands.hello          = require('./commands/hello.js');
+global.commands.friend         = require('./commands/friend.js');
 global.commands.weather        = require('./commands/weather.js');
 global.commands.addLocation    = require('./commands/addLocation.js');
 global.commands.removeLocation = require('./commands/removeLocation.js');
